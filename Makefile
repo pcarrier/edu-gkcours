@@ -1,7 +1,7 @@
 RSTOPTS=--time --strict --language=fr
 RSTHTMLOPTS=--embed-stylesheet
 
-SOURCES=*.rst
+SOURCES=asr.rst plc.rst
 HTML=$(foreach t,$(filter %.rst,$(SOURCES)),$(basename $(t)).html)
 PDF=$(foreach t,$(filter %.rst,$(SOURCES)),$(basename $(t)).pdf)
 TMPS=$(foreach t,$(filter %.rst,$(SOURCES)),$(basename $(t)).txt.tmp)
@@ -11,13 +11,13 @@ COMMIT_REV=$(shell git-show | grep ^commit | sed "s/^commit *//")
 
 default: all
 
-%.txt.tmp: %.txt
+%.rst.tmp: %.rst
 	@sed -e "s/@DATE@/$(COMMIT_DATE)/" -e "s/@REV@/$(COMMIT_REV)/" $^ > $@
 
-%.html: %.txt.tmp
+%.html: %.rst.tmp
 	rst2html.py $(RSTOPTS) $(RSTHTMLOPTS) $^ > $@
 
-%.pdf: %.txt.tmp
+%.pdf: %.rst.tmp
 	rst2latex.py $(RSTOPTS) $^ > $(basename $@).tex
 	pdflatex $(basename $@).tex
 	rm -f $(basename $@).log $(basename $@).out $(basename $@).tex $(basename $@).aux
