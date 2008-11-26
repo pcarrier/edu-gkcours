@@ -1,7 +1,7 @@
-RSTOPTS=--time --strict --language=fr
-RSTHTMLOPTS=--embed-stylesheet
+RSTOPTS=--strict --language=fr
+RSTHTMLOPTS=--embed-stylesheet --stylesheet-path=lsr.css
 
-SOURCES=asr.rst plc.rst
+SOURCES=asr.rst plc.rst plctp.rst xmltp.rst
 HTML=$(foreach t,$(filter %.rst,$(SOURCES)),$(basename $(t)).html)
 PDF=$(foreach t,$(filter %.rst,$(SOURCES)),$(basename $(t)).pdf)
 TMPS=$(foreach t,$(filter %.rst,$(SOURCES)),$(basename $(t)).txt.tmp)
@@ -9,7 +9,7 @@ TMPS=$(foreach t,$(filter %.rst,$(SOURCES)),$(basename $(t)).txt.tmp)
 COMMIT_DATE=$(shell git-show | grep ^Date | sed "s/^Date: *//")
 COMMIT_REV=$(shell git-show | grep ^commit | sed "s/^commit *//")
 
-default: all
+default: html
 
 %.rst.tmp: %.rst
 	@sed -e "s/@DATE@/$(COMMIT_DATE)/" -e "s/@REV@/$(COMMIT_REV)/" $^ > $@
