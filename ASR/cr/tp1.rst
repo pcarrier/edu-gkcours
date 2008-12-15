@@ -33,7 +33,7 @@ CSMA/CD
 Performances réseau
 -------------------
 
-- Paquets de 1 octet : 118 kbit/s, paquets de 60 o dont 1 o de données ;
+- Paquets de 1 octet : 118 kbit/s, paquets IP de 60 o dont 1 o de données ;
 -   10 o : 1176 kbit/s, 60 o dont 10 o ;
 -   20 o : 2299 kbit/s, 62 o dont 20 o ;
 -  100 o : 5988 kbit/s, 142 o dont 100 o ;
@@ -42,7 +42,7 @@ Performances réseau
 - 2000 o : 9407 kbit/s, (1514+562) dont (1480+520) o ;
 - 3000 o : 9419 kbit/s, (1514+1514+82) dont (1480+1480+40).
 
-Les débits observés dont dues à l'overhead de 42 octets par trame.
+Les débits observés dont dues à l'overhead de 42 octets par paquet au niveau d'UDP+IP, puis 12 octets au niveau d'Ethernet. On négligera le silence inter-trame.
 
 Explication par trames
 ----------------------
