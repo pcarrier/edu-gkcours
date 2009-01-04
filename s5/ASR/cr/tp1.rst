@@ -44,9 +44,9 @@ Performances réseau
 
 Les débits observés dont dues à l'overhead de 42 octets par paquet au niveau d'UDP+IP, puis 12 octets au niveau d'Ethernet. On négligera le silence inter-trame.
 
-Explication par trames
-----------------------
+Explication par paquets
+-----------------------
 
-Chaque paquet UDP passe sur un certain nombre de trames. Chaque trame contient au maximum un paquet IP d'une longueur totale de 1500 octets, dont 1480 octets de données.
+Chaque paquet UDP passe sur un certain nombre de trames Ethernet. Chaque trame Ethernet contient au maximum un paquet IP d'une longueur totale de 1500 octets, dont 1480 octets de données.
 
 
