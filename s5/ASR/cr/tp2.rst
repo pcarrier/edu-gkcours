@@ -100,6 +100,24 @@ manière suivante : ::
       ... (attention il y a d’autres évenements)
   fin tantque
 
+Le protocole ICMP :
+====================
+
+Le protocole UDP :
+==================
+
+Format de l'en-tête UDP
+------------------------
+
+Description
+::::::::::::
+
++ Source Port : port de la machine emmetrice,
++ Destination Port : port de la machine distante,
++ message lenght : taille totale du paquet (data + en-tête),
++ checksum : Somme de contrôle, défini dans la RFC 768, permet de 
+
+
 Structure d'une requète ARP
 ===========================
 
