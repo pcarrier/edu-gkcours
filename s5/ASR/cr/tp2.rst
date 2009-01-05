@@ -2,6 +2,7 @@
 TP 2 Réseau
 ===========
 
+:Auteurs: Saad-Dupuy Jean-Christophe, Carrier Geoffroy
 
 Le protocole ``ARP``
 =====================
@@ -97,7 +98,6 @@ manière suivante : ::
              Mise à jour de la table ARP.
           finsi.
        finsi
-      ... (attention il y a d’autres évenements)
   fin tantque
 
 Le protocole ICMP :
@@ -290,30 +290,31 @@ dessus.
 Rôle du Sequence Number et de l'ACK Number
 ------------------------------------------
 
+C'est deux champs servent à assurer l'ordre, la retransmission des paquets perdus et la suppression des paquets dupliqués.
 
 Algorithme de mise à jour des deux champs
 ------------------------------------------
 
-En observant la communication entre le client et le serveur (le client emmet) :
+En observant la communication entre le client et le serveur :
 
-+ Emmission : ::
-        initial : SN =1, ACKN=1.
++ Emission : ::
+ 
+        initial : SN = valeur initial, ACKN = valeur initiale.
 
         ensuite : SN = SN + longueur data du dernier envois, ACKN = ACKN
 
 + Reception : ::
+
         SN = SN initial reçus, ACKN = SN reçu + longueur data dernière reception
 
 
-Suite
-=====
 
-a
-b
-c
-d
-e
-f
+Contrôle de flux
+=================
+
+Si les données à transmettre sont de taille supérieur à celle de la fenêtre de reception, l'emmeteur enverras au recepteur le paquet fragmenté en accord avec la taille de la fenêtre de la machine receptrice, miss à jour à chaque paquet.
+
+
 
 Exercices de synthèse
 =====================

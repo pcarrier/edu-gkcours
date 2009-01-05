@@ -2,6 +2,8 @@
 TP 1 Réseau
 ===========
 
+:Auteurs: Saad-Dupuy Jean-Christophe, Carrier Geoffroy
+
 On choisit le réseau de classe C 192.168.42.0/24.
 
 ping
@@ -45,6 +47,10 @@ Performances réseau
 Les débits observés dont dues à l'overhead de 42 octets par paquet au niveau d'UDP+IP, puis 12 octets au niveau d'Ethernet. On négligera le silence inter-trame.
 
 On observe la corrélation prévisible entre le ratio données utiles transmises/données transmises et le débit obtenu.
+
+.. image:: stats.png
+	:width: 16cm
+
 
 Plusieurs trafics
 -----------------
