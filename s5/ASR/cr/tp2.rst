@@ -282,6 +282,47 @@ d
 e
 f
 
+Exercices de synthèse
+=====================
+
+La commande talk
+----------------
+
+Nous n'avons pas étudié les sources de ce programme, notre compréhension du protocole est donc limitée.
+
+Négociation
+:::::::::::
+
+La négociation se fait en UDP. Celle-ci est prise en charge côté serveur via ``inetd`` qui ouvre un socket sur le service standard ``talk`` (défini dans ``/etc/services``) et appelle ``in.talk``, et côté client par ``talk`` qui utilise un port temporaire client.
+
+- Le client du "demandeur" indique entre autres au serveur du "demandé" l'utilisateur demandeur, l'utilisateur demandé et optionnellement le ``tty`` demandé.
+
+- Le serveur du demandeur indique s'il peut ou non transmettre la requête ; le cas échéant, il notifie alors le demandé sur tous les ``tty`` (selon l'implémentation du protocole) ou celui spécifié.
+
+- En l'absence d'absence de réponse du demandé, après un timeout de généralement 30 secondes, le serveur du demandé notifie le client du demandeur du refus.
+
+- En cas d'acceptation, le demandé invoque le client et un échange similaire aux trois points précédents a lieu, puis la partie discussion commence.
+
+Des numéros de ports TCP temporaires ont été échangés durant cette négociation selon un mécanisme que nous n'avons déterminé.
+
+Discussion
+::::::::::
+
+La discussion se fait en TCP. Celle-ci est entièrement pris en charge par les programmes ``talk`` invoqués par les interlocuteurs, désignés comme clients dans la négociation. Le flag PSH est systématiquement utilisé pour assurer la fluidité des échanges. Il semblerait que des échanges UDP perdurent, nous n'en avons pas compris l'utilité.
+
+- Le programe du demandé se connecte en TCP sur un port temporaire, sur lequel écoute le programme du demandeur.
+
+- Le demandé transmet 3 caractères de contrôle (suppression en arrière et avant et un troisière).
+
+- Puis chacun transmet chaque caractère à sa saisie.
+
+Clôture
+:::::::
+
+- À l'interruption de l'un des processus, ce dernier clôt le socket (émission d'un FIN+ACK). Son interlocuteur transmet un FIN+ACK. Contrairement à ``socklab``, seul l'initiateur de la fermeture envoie un ACK pour le FIN+ACK.
+
+- Des échanges UDP ont ensuite lieu. Ils contiennent à nouveau les utilisateurs émetteurs et récepteurs.
+
 
 Structure d'une requête ARP
 ===========================
