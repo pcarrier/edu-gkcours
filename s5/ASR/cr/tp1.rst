@@ -66,4 +66,4 @@ Les délais de ``ping`` explosent dans des contextes aux nombreuses collisions E
 Exercice de synthèse
 --------------------
 
-Si plusieurs étudiants utilisent la même adresse IP, chaque nœud souhaitant joindre cette IP effectuera une requête ARP. Le premier à répondre verra son adresse MAC stockée dans la table ARP du nœud et sera donc joint par celui-ci jusqu'à expiration de l'entrée.
+Si plusieurs étudiants utilisent la même adresse IP, chaque noeud souhaitant joindre cette IP effectuera une requête ARP. Le premier à répondre verra son adresse MAC stockée dans la table ARP du noeud et sera donc joint par celui-ci jusqu'à expiration de l'entrée.
