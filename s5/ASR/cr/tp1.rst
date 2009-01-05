@@ -44,9 +44,20 @@ Performances réseau
 
 Les débits observés dont dues à l'overhead de 42 octets par paquet au niveau d'UDP+IP, puis 12 octets au niveau d'Ethernet. On négligera le silence inter-trame.
 
-Explication par paquets
------------------------
+On observe la corrélation prévisible entre le ratio données utiles transmises/données transmises et le débit obtenu.
 
-Chaque paquet UDP passe sur un certain nombre de trames Ethernet. Chaque trame Ethernet contient au maximum un paquet IP d'une longueur totale de 1500 octets, dont 1480 octets de données.
+Plusieurs trafics
+-----------------
 
+Les débits moyens sont similaires entre les 2 échanges et totalisent environ 7,3MBit/s avec un hub ; le ``ping`` explose à environ 16ms. L'équité est due à la gestion des collisions d'Ethernet.
 
+Avec un switch, dans le cas de deux échanges entre quatre machines où chacune d'elle reçoit ou émet un flux, les débits respectifs correspondent aux résultats obtenus dans la configuration à deux postes. Les délais de ``ping`` sont aussi bas.
+
+Avec un switch, dans le cas de trois machines émettant des flux vers une seule machine, le débit total est équitablement partagé entre les flux et approche les résultats obtenus dans la configuration à deux postes. Les délais de ``ping`` explosent.
+
+Les délais de ``ping`` explosent dans des contextes aux nombreuses collisions Ethernet.
+
+Exercice de synthèse
+--------------------
+
+Si plusieurs étudiants utilisent la même adresse IP, chaque nœud souhaitant joindre cette IP effectuera une requête ARP. Le premier à répondre verra son adresse MAC stockée dans la table ARP du nœud et sera donc joint par celui-ci jusqu'à expiration de l'entrée.
