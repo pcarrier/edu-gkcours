@@ -126,7 +126,7 @@ Coté réception : ::
 
 Coté emission : ::
 
-        sendto 1 192.168.0.15 4567
+        sendto 3 192.168.0.15 4567
         >Hello World !
 
 Le datagramme UDP reçu a une taille de 21o, correspondant aux 13o du champ data (48 65 6c 6c 6f 20 77 6f 72 6c 64 20 21, correspondant à la chaîne de caractères "Hello world !") plus la taille de l'en-tête.
@@ -164,14 +164,14 @@ Protocole ``TCP``
 ==================
 
 Création de la socket passive :
-==================================
+--------------------------------
 ::
 
         socklab-tcp> passive
         socklab-tcp> accept
  
 Création de la socket active :
-==================================
+-------------------------------
 ::
 
         socklab-TCP> connect 10.0.0.42 44833
@@ -182,7 +182,7 @@ La première ``socket`` est dite "passive" car elle attend une connexion.
 La seconde est dite "active" car elle demande une connexion.
 
 Rôles
-======
+-----
 
 + socket passive : Socket serveur,
 + socket active : socket client.
@@ -190,7 +190,7 @@ Rôles
 
 
 Paquets générés
-=================
+----------------
 
 Tous les paquets décrits ci-dessous sont de longueur 0, avec l'option "ne pas fragmenter".
 
@@ -218,39 +218,39 @@ Informations échangées :
 
 
 Rôle du flag SYN :
-===================
+--------------------
 
 Le flag SYN sert pour une demande de synchronisation ou l'établissement de la connexion.
 Le numéro de séquence permet de reconstituer le flux dans le bon ordre, quel que soit l'ordre d'arrivée des paquets et sans trou.
 
 Au moment du accept...
-======================
+-----------------------
 
 Au niveau du serveur, seul une socket est créée en attente de requête SYN.
 Lors du ``accept``, s'il n'y a pas encore de requête, le serveur en attend une.
 Ensuite, le serveur crée une socket dédiée permettant de communiquer avec le client et répond au SYN avec un SYN+ACK.
  
-Identification 
-================
+Identification
+----------------
 
 On peut identifier les connexions à partir des addresse et port du client dans les paquets IP.
 
 Port inexistant
-================
+----------------
 
 Lorsque le client tente de se connecter sur un port fermé, le serveur répond par un paquet TCP avec le flag ReSeT (une politique de sécurité courante est de DROPer le paquet, *i.e* ignorer la demande).
 
 Fermeture des connexions
-=========================
+------------------------
 
 Flag ``FIN``
--------------
+:::::::::::::
 
 Le flag ``FIN`` indique que son émetteur ne souhaite plus envoyer de données. Quand les deux interlocuteurs ont envoyé un
 ``FIN`` les sockets sont fermées et la pile ``TCP`` perd les informations de la connexion.
 
 Echanges
----------
+::::::::
 
 + 1 --> 2 FIN+ACK 
 + 2 --> 1 ACK
@@ -263,14 +263,47 @@ Echanges
 Avec 1 et 2 client et serveur, ou l'inverse.
 
 
+Fermeture de sockets et écriture
+::::::::::::::::::::::::::::::::
+
++ Lors de la fermeture d'un socket coté client avec ``close``, une tentative de ``write`` de ce même coté est tout simplement impossible, la socket étant détruite.
+  Du coté serveur, nous recevons un paquet ``TCP`` de type ReSeT.
++ le ``shutdown out`` permet de recevoir mais pas d'écrire,
++ le ``shutdown in``  permet d'écrire, mais pas de recevoir.
++ le ``shutdown both`` coupe l'emmission et la reception, mais ne détruit pas la socket. Elle devra être fermée à l'aide de ``close``.
+
 Automates
-==========
+::::::::::
 
 .. image:: mealy_active.png
         :width: 15cm
 
 .. image:: mealy_passive.png
         :width: 15cm
+
+Etude du séquencement et du contrôle d'erreur
+==============================================
+
+Nous avons connectés deux machines entre elles en ``TCP`` et fait transiter des données de type chaîne de caractère
+dessus.
+
+Rôle du Sequence Number et de l'ACK Number
+------------------------------------------
+
+
+Algorithme de mise à jour des deux champs
+------------------------------------------
+
+En observant la communication entre le client et le serveur (le client emmet) :
+
++ Emmission : ::
+        initial : SN =1, ACKN=1.
+
+        ensuite : SN = SN + longueur data du dernier envois, ACKN = ACKN
+
++ Reception : ::
+        SN = SN initial reçus, ACKN = SN reçu + longueur data dernière reception
+
 
 Suite
 =====
