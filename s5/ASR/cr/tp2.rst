@@ -266,11 +266,14 @@ Avec 1 et 2 client et serveur, ou l'inverse.
 Automates
 ==========
 
-.. figure:: mealy_active.png
+.. image:: mealy_active.png
         :width: 15cm
 
-.. figure:: mealy_passive.png
+.. image:: mealy_passive.png
         :width: 15cm
+
+Suite
+=====
 
 a
 b
@@ -283,7 +286,7 @@ f
 Structure d'une requête ARP
 ===========================
 
-.. figure:: arp1.png
+.. image:: arp1.png
         :width: 15cm
 
 
