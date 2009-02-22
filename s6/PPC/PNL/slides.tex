@@ -1,17 +1,45 @@
 \documentclass{beamer}
-  \usepackage[utf8]{inputenc}
-  \usetheme{Warsaw}
+\usetheme{Copenhagen}
 
-  \title{Programmation Neuro-linguistique}
-  \author{Carrier Geoffroy, Saad-Dupuy Jean-Christophe}\institute{L3 MIAGE}
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+\usepackage{hyperref}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{graphicx}
 
-  \begin{document}
+\AtBeginSection[]
+{
+frametitle{Plan}
+begin{frame}
+\tableofcontents[currentsection,hideothersubsections]
+end{frame}
+}
 
-  \begin{frame}
-  \titlepage
-  \end{frame}
+\title{Programmation Neuro-linguistique}
+\author{Geoffroy Carrier, Jean-Christophe Saad-Dupuy}
+\institute{Université Joseph Fourier, L3 MIAGE}
 
-  \begin{frame}
+\date{23 février 2009}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\section{Présentation historique}
+\subsection{Émergence}
+\subsection{Croissance}
+\subsection{Récupération}
+
+\section{Théorie}
+\subsection{Fondements}
+\subsection{Techniques}
+\section{Dans l'environnement professionnel}
+\subsection{Un outil pour comprendre}
+\subsection{Un outil pour être compris}
+\section{Limites et précautions}
+
+\begin{frame}
 	\begin{itemize}
 	\item Présentation historique
 		\begin{itemize}
@@ -23,11 +51,11 @@
 	\item Dans l'environnement Professionnel
 	\item Limites et précautions
 	\end{itemize}
-  \end{frame}
+\end{frame}
 
-  \begin{frame}
-  	Et c'est facile.
-  \end{frame}
+\frame{
+\frametitle{Exemple de frame}
+Et c'est facile.
+}
 
-  \end{document}
-
+\end{document}
