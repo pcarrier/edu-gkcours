@@ -1,5 +1,5 @@
 \documentclass{beamer}
-\usetheme{Copenhagen}
+\usetheme[hideothersubsections,width=2cm]{Berkeley}
 
 \usepackage[utf8]{inputenc}
 \usepackage[francais]{babel}
@@ -8,16 +8,8 @@
 \usepackage{xcolor}
 \usepackage{graphicx}
 
-\AtBeginSection[]
-{
-\begin{frame}
-\frametitle{Plan}
-\tableofcontents[currentsection,hideothersubsections]
-\end{frame}
-}
-
-\title{Programmation Neuro-linguistique}
-\author{Geoffroy Carrier, Jean-Christophe Saad-Dupuy}
+\title{Programmation Neuro-Linguistique}
+\author{Geoffroy Carrier,\\ J-Ch. Saad-Dupuy}
 \institute{Université Joseph Fourier, L3 MIAGE}
 
 \date{23 février 2009}
@@ -35,6 +27,16 @@
 \frame{
 \frametitle{Kézako ?}
 Il existe énormément de définitions plus ou moins compatibles...
+\only<1>{
+	\begin{block}{Selon A}
+	La la la
+	\end{block}
+}
+\only<2>{
+	\begin{block}<2>{Selon B}
+	Bi bi bi
+	\end{block}
+}
 }
 
 \frame{
@@ -43,20 +45,20 @@ Il existe énormément de définitions plus ou moins compatibles...
 \item Modèles de comportements ;
 \item Techniques pour augmenter les habiletés relationnelles ;
 \end{itemize}
-\end{frame}
+}
 
 \section{Présentation historique}
 \subsection{Émergence}
 \frame{
 \frametitle{PNL}
 \begin{itemize}
-	\item fondée dans les années 70
-	\item par John Grinder et Richard Bandler
+	\item Fondée dans les années 70 ;
+	\item Fohn Grinder et Richard Bandler.
 \end{itemize}
 }
 \frame{
 \frametitle{Bases de la PNL}
-Repose sur les travaux de 3 psychiatres:
+Repose sur les travaux de 3 psychiatres :
 \begin{itemize}
 	\item Fritz Perls (Gestalt Therapy)
 	\item Virginia Satir (Thérapie familiale)
@@ -76,11 +78,11 @@ Objectif :
 \frametitle{Gestalt Therapy}
 	Intègre cinq dimensions principales :
 	\begin{itemize}
-		\item  physique
-		\item  affective
-                \item cognitive
-                \item sociale
-                \item spirituelle		
+		\item Physique ;
+		\item Affective :
+                \item Cognitive ;
+                \item Sociale ;
+                \item Spirituelle.
 	\end{itemize}
 }
 
@@ -141,26 +143,28 @@ Objectif :
 
 \section{Limites et précautions}
 \begin{frame}[t]\frametitle{La MILS interpelle le législateur}
-	D'après le rapport 2001 de la Mission Interministérielle de Lutte contre les Sectes~:
-	\begin{quote}
-	La programmation neurolinguistique, couramment dénommée PNL,
-	forme un ensemble disparate de méthodes de communication
-	(apprendre à reformuler un message, à décoder des signaux non verbaux,
-	des mouvements oculaires, etc..),
-	basé sur un ensemble tout aussi disparate de références théoriques.
-	Les fondements scientifiques et les validations empiriques sont faibles~:
-	les hypothèses relatives aux mouvements oculaires ont d'ailleurs été infirmées.
-	\end{quote}
-\end{frame}
-\begin{frame}[t]\frametitle{La MILS interpelle le législateur}
-	\begin{quote}
-	L'absence de principes déontologiques orientés vers l'aide et la santé,
-	plutôt que vers l'exploitation et le profit,
-	l'absence de connaissances en psychopathologie et en psychiatrie
-	permettant d'aider ou d'orienter les personnes perturbées,
-	l'absence de formation scientifique permettant de relativiser les connaissances
-	et de ne pas prétendre à la vérité, caractérisent les pratiques qui font question.
-	\end{quote}	
+	Rapport MILS 2001 :
+	\only<1>{
+		\begin{quote}
+		La programmation neurolinguistique, couramment dénommée PNL,
+		forme un ensemble disparate de méthodes de communication
+		(apprendre à reformuler un message, à décoder des signaux non verbaux,
+		des mouvements oculaires, etc..),
+		basé sur un ensemble tout aussi disparate de références théoriques.
+		Les fondements scientifiques et les validations empiriques sont faibles~:
+		les hypothèses relatives aux mouvements oculaires ont d'ailleurs été infirmées.
+		\end{quote}
+	}
+	\only<2>{
+		\begin{quote}
+		L'absence de principes déontologiques orientés vers l'aide et la santé,
+		plutôt que vers l'exploitation et le profit,
+		l'absence de connaissances en psychopathologie et en psychiatrie
+		permettant d'aider ou d'orienter les personnes perturbées,
+		l'absence de formation scientifique permettant de relativiser les connaissances
+		et de ne pas prétendre à la vérité, caractérisent les pratiques qui font question.
+		\end{quote}
+	}
 \end{frame}
 
 \end{document}
