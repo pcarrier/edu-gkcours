@@ -1,0 +1,74 @@
+ Libellé          | Débit | Crédit
+ =================================
+ Capital          |       | 10000
+ Banque           | 10000 |
+ Emprunt          |       |  7200
+ Banque           |  7200 |
+ Achat ordi       |  4500 |
+ Banque           |       |  4500
+ Achat divers     |  5400 |
+ Fournisseur      |       |  5400
+ Achat logiciel   |  2160 |
+ Fournisseur      |       |  1080
+ Banque           |       |  1080
+ Achat local      |  2500 |
+ Banque           |       |  2500
+ Fournitures d.   |  1500 |
+ Banque           |       |  1500
+ Charges ext.     |  1500 |
+ Dettes fourn.    |       |  1500
+ Charges pers.    |  6750 |
+ Banque           |       |  6750
+ Fact. Noname     |       |  2400
+ Créance client   |  1200 |
+ Banque           |  1200 |
+ Fac. Degrifmode  |       |  1800
+ Banque           |  1800 |
+ Facture GoTo     |       |  1500
+ Client           |  1500 |
+ Frais financiers |   150 |
+ Banque           |       |   150
+ Prod stockée     |       |  2100      \ Espace montagne
+ En cours prod    |  2100 |            /
+ Remb. emprunt    |   200 |
+ Banque           |       |   200
+ Fournisseur      |  1800 |
+ Banque           |       |  1800
+ Dot. amortiss.   |   260 |
+ Amortissement    |       |   260 (a pour objectif d'enregistrer la dépréciation)
+
+ Charges            |  Produits
+ Ch. exploitation   |  Prod exp vendue
+  Fournitures 1500  |   Nomade     2400
+  Charges ext 1500  |   Degrifmode 1800
+  Personnel   6750  |   GoTo       1500
+  Amortiss.    260  |
+  ----------------  |  Prod exp stockée
+             10010  |   E.M.       2100
+ Ch. financières    |  ----------------
+               150  |              7800
+                    |  ----------------
+                    |             10160 
+                    |
+                    |  Perte
+                    |              2360
+ ======================================
+ Total        10160 |  Total      10160
+
+Banque : 2440
+Total net : 21540
+
+                       Actif | Passif
+AI                           | CP
+Immo incorpo                 | Capital      10 000
+Immo corpo                   | Résultat
+Immo financière              | Dettes
+AC                           | Emprunts
+Stock                        | Frs
+Créances clients             |         
+Disponibilités               | Sociales
+                             | Fiscales
+                             |
+                             |
+
+21 740

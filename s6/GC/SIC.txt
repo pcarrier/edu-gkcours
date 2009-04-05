@@ -1,0 +1,266 @@
+Organisation comptable : le Système d'Information Comptable
+===========================================================
+
+La comptabilité est un moyen de communiquer des informations comptables et financières en respectant les **principes comptables**.
+
+Elle est régie par un certain nombre de textes :
+
+- qui ont pour mission de normaliser les méthodes,
+- afin que l'information délivrée (en principe) ait le même contenu d'une entreprise à l'autre, d'un pays à l'autre.
+
+Elle est organisée à partir des documents et des informations suivantes :
+
+- Le journal
+- Le grand livre des comptes
+- La balance
+- Le bilan
+- Le compte de résultat
+- Les travaux d'inventaire
+
+Le journal
+----------
+
+« Journal de bord » : permet d'enregistrer chronologiquement les opérations.
+
+Chaque enregistrement doit préciser :
+
+- la date d'enregistrement,
+- les comptes mouvementés **(débit = crédit)**,
+- les montants,
+- le libellé de l'opération,
+- les références de la pièce justificative.
+
+Il assure la **traçabilité** des opérations.
+
+&#x2192; Ceci constitue des **règles de gestion** mises en œuvre dans le cadre du **système d'information comptable** de l'entreprise.
+
+**Exemple :** le 08/09/2002, achat de marchandises facture référence nº 202 B pour 4573 euros réglé par chèque bancaire nº L 452 pour 1520 euros et le solde à 30 jours fin de mois.
+
+
+`|Compte débité Compte crédité Date et libellé         Montant débit Montant crédit
+|         6070                Achat de marchandises            4573
+|                        4010 Fournisseurs                                    3053
+|                        5120 Banque                                          1520
+|
+|                             08/09/02
+|                             Facture réf 202 B,
+|                             chèque L 452`
+
+Le grand livre des comptes
+--------------------------
+
+Sur le grand-livre des comptes sont reportées toutes les écritures mentionnées dans le journal.
+
+C'est le fichier de tous les comptes de l'entreprise :
+
+- comptes de bilan (classe 1 à 5),
+- comptes de gestion (classe 6 et 7).
+
+Les comptes sont classés selon la nomenclature du plan comptable général et respectent les principes suivants :
+
+- le débit correspond à la colonne de gauche,
+- le crédit correspond à la colonne de droite,
+- le solde est débiteur si total débit > total crédit,
+- le solde est créditeur si total débit < total crédit,
+- un compte d'actif (bilan) augmente au débit et diminue au crédit,
+- un compte de passif (bilan) augmente au crédit et diminue au débit,
+- un compte de charges, classe 6 (compte de résultat) augmente au débit et diminue au crédit (extrêmement rarement crédité),
+- un compte de produit, classe 7 (compte de résultat) augmente au crédit et diminue au débit,
+- pour chaque opération au moins deux comptes sont mouvementés, et **le total débit = total crédit** &#x2192; principe de la partie double
+
+Amortissements
+--------------
+
+Prorata temporis : prorata du temps... On se base sur 1j = 1/360ème année.
+
+L'amortissement dégressif N'est PAS obligatoire. L'état ne l'autorise pas systématiquement (correspond à une obsolescente en plus de l'usure) : réduirait les impôts (au moins à court terme) en baissant le résultat.
+
+Exemple p.32 du polycopié.
+
+Administration fiscale préconise les taux suivants :
+- Bâtiments : 2 à 5 %
+- Matériel et outillage : 10 à 20 %
+- Matériel de transport : 20 à 25 %
+- Mobilier et matériel et bureau : 10 à 20 %
+- Agencement et installation : 5 à 10 %
+
+En ce qui concerne le matériel informatique, il peut être amorti sur 3 ans.
+
+Le schéma d'enregistrement en fin d'exercice et le suivant :
+
+681 dotations aux amortissements     28 Amortissements
+1000 euros                           1000 euros
+(Consommation de charge)             (Dépréciation du bien)
+
+Cas particuliers relatifs aux immobilisations :
+
+Frais d'établissements
+**********************
+
+Frais engagés lors de la création de l'entreprise (frais de notaire, conseils juridiques, statuts, etc.) ou lors de l'augmentation de capital.
+
+N'ayant pas de réelle valeur économique et ne contribuant pas à une réelle appréciation patrimoniale, ils sont cependant enregistrés en immobilisations dans le but d'être répartis sur plusieurs exercices au moyen de l'amortissement.
+
+Ils sont amortissables en linéaire sur un maximum de 5 ans et sont soldés à l'issue de cette période.
+
+Les charges à répartir sur plusieurs exercices
+**********************************************
+
+Ces charges regroupent :
+- des frais d'acquisition (frais notariaux pour acquisition d'un immeuble)
+- des frais d'émission pour un emprunt obligatoire
+- des réparations importantes (locaux, machines)
+- des frais engagés dans le cadre de projet de développement (nouveaux produits, innovation, etc.)
+
+La logique économique de cette approche est d'étaler une charge importante et/ou qui est susceptible de concerner plusieurs exercices.
+
+Ex :
+
+Enregistrement comptable en cours d'exercice est le suivant :
+62 Prestations externes   512 Banque
+10 000 euros              10 000 euros
+(Enregistrement de la charge)
+
+481 Charges à répartir   79 Transfert de charge
+10 000 euros             10 000 euros
+
+681 Dotation aux amortissements      481 Charges à répartir
+2 000 euros                          2 000 euros
+
+Les cessions d'immobilisations
+******************************
+
+Cette opération a pour conséquence la sortie du bien du patrimoine de l'entreprise.
+
+Ceci donne lieu à l'enregistrement d'écritures comptables distinctes selon les cas de figure.
+
+1 - Immobilisation non amortie totalement à la date de cession :
+Bien valeur d'origine 42 000 euros HT, amortissable sur 4 ans en liénaire, acquis au 01/01/n-2 et cédé le 31/03/n pour 15 000 euros HT.
+
+Enregistrement de la vente :
+
+512 Banque            775 Produit exceptionnel
+15 000 euros          15 000 euros
+
+Enregistrement de la dotation aux amortissements pour l'exercice à la date de cession, soit 3/12 d'une annuité 10 500 euros.
+
+68 Dotation aux amortissements    28 Amortissements
+2625 euros                        2625 euros
+
+Enregistrement de la sortie du bien immobilisé :
+
+Le bien n'étant pas totalement amorti il convient d'enregistrer le solde de la valeur du bien en charge exceptionnelle.
+
+Dotation année n-2 :   10 500
+Dotation année n-1 :   10 500
+Dotation année n :      2 625
+Total amortissements : 23 625
+Montant à amortir :    18 375
+
+
+675 Valeur comptable des éléments d'actif cédés       215 Immobilisation
+18 375 euros                                          42 000 euros
+
+2... Amortissements
+23 625 euros
+
+3 écritures : on enregistre la cession, la dotation pour l'exercice, la sortie du bien du patrimoine.
+
+2ème cas : le bien est totalement amorti à la date de cession, d'où VNC (valeur résiduelle) = 0 et pas d'enregistrement au compte 675.
+
+En ce qui concerne les biens non amortissables, la cession observe les mêmes règles que ci-dessus.
+
+La seule différence réside dans le fait qu'il n'y a pas d'amortissements, d'où VNC = prix d'acquisition.
+
+Les provisions pour dépréciation
+********************************
+
+Celles-ci ont pour objectif de constater une dépréciation potentielle :
+- des immobilisations non anmortissables,
+- des stocks,
+- des créances clients,
+- des titres de placement (VMP).
+
+Principe général de comptabilisation :
+Une dépréciation d'actif immobilisé ou circulant correspond à :
+- une perte potentielle de valeur du bien, qui est enregistrée au bilan selon la nature du bien (classes 29 à 59) au crédit,
+- une charge selon la nature de l'opération, exploitation, financière ou exceptionnelle, enregistrée au compte de résultat (classe 68), au débit.
+
+Exemple : dépréciation d'une créance client pour 1500 euros.
+681 Dotations aux provisions des actifs circulants   491 Provisions pour dépréciation créances clients
+1500 euros                                           1500 euros
+
+Provisions pour dépréciation des immobilisations non amortissables
+******************************************************************
+
+Valeur d'un fonds de commerce d'un magasin de ventes d'appareils photographiques au 31/12/N : 500 000 euros.
+
+Installation d'un concurrent à proximité, d'où risque de perdre une partie de la clientèle et donc une baisse d'activité de 30% (baisse du CA).
+Ceci entraîne une perte potentielle de valeur du fonds de commerce de 150 000 euros.
+
+681 Dotations aux provisions des immobilisations  290 Provisions pour dépréciation des actifs incorporels
+150 000 euros                                     150 000 euros
+
+Sur la période N+1 à N+3, la situation s'est améliorée, cependant la provision a été maintenue à 30%.
+
+En N+4, grâce à une action commerciale soutenue chaque année vous avez pu faire face à cette concurrence agressive, votre concurrent a déposé le bilan. Cependant, vous avez constaté une baisse de la clientèle du fait de la vente sur Internet de certains produits.
+
+Votre fonds de commerce est estimé à 90% de sa valeur initiale, soit 450 000 euros, d'où la reprise de provision pour l'excédent de provision.
+
+290 Provisions pour dépréciation des actifs incorporels 787 Reprise provisions pour dépréciation des actifs incorporels
+100 000 euros                                           100 000 euros
+
+Provisions pour titres de participation
+***************************************
+
+Règles de calcul d'évaluation des titres à l'inventaire :
+- Ils doivent être évalués catégorie par catégorie (participation, VMP, etc.).
+- Les plus-values ne sont jamais comptabilisées, en conséquence pas de compensation PV/MV pour les titres de nature différente.
+- Pour les titres de même nature acquis à des dates et cours différents, on compare la valeur d'inventaire avec la valeur globale d'acquisition de l'ensemble des titres pour déterminer la provision à enregistrer
+
+Exemple : PSA ayant décidé de participer au capital du sous-traitant BollHoff Otalu, 10 000 titres (actions) ont été acquis à 185 euros l'un en N-1.
+À ce jour, aucune provsion n'a été comptabilisée car le cours de l'action était supérieur à sa valeur d'acquisition.
+Au 31/12/N+1, le cours de l'action a fortement baissé, le cours étant de 140 euros, d'où provision de 450 000 euros (45 * 10 000 actions).
+6866 Dotations aux provisions des immobilisations financières  2961 Provisions pour dépréciation des titres de participation
+450 000 euros                                                  450 000 euros
+
+Comptabilisation de la reprise :
+Grâce à une innovation technologique permettant une plus grande résistance des points d'ancrage en cas de choc, l'entreprise détient désormais un avantage concurrentiel par rapport à ses concurrents. Le cours de l'action BollHoff Otalu est évaluée à 200 euros au 31/12/N+2.
+
+La provision enregistrée par PSA au 31/12/N+1 n'a plus lieu d'être et doit être reprise en totalité.
+
+Provision pour dépréciation des stocks
+**************************************
+
+Principes généraux :
+- Les comptes de stocks sont annulés chaque année.
+- Leurs variations, avant provisions, sont prises en compte pour le calcul du résultat de l'année.
+- Les provisions afférentes à chaque type de stocks sont soldées en même temps que les stocks correspondants (stocks initiaux) ou créées en même temps que les stocks finaux.
+- Le calcul de la provision tient compte de l'évaluation de la valeur des stocks selon leur nature, en coût d'acquisition ou coût de production.
+
+Exemple : BollHoff Otalu avait constitué au 31/12/N-1 les provisions suivantes :
+- zicral, matières premières, 20 000 euros
+- rivet de fixation ATN 1600, produits finis, 45 000 euros
+
+Annulation de la provision au 31/12/N relative au SI :
+391 Provisions des stocks MP
+20 000 euros                        78173 Reprise provisions des stocks
+395 Provisions des stocks PF        65 000 euros
+45 000 euros
+
+Constatation de la provision au 31/12/N relative au SF :
+Au 31/12/N, le cours du zicral a fortement augmenté tenant compte d'une augmentation de la demande mondiale. La provision à constituer est estimée seulement à 3200 euros.
+En ce qui concerne les produits finis, suite à un risque de mévente un lot de rivets de fixation réf ZC 4500 doit être provisionné pour 17 800 euros.
+
+68173 Provisions des stocks SF       391 Provisions des stocks MP
+21 000 euros                         3200 euros
+                                     395 Provisions des stocks PF
+                                     17 800 euros
+
+Provision pour dépréciation des créances clients
+************************************************
+
+- La dépréciation correspond au montant des créances que l'entreprise risque de ne pas recouvrir lorsque son créancier a des difficultés financières.
+- L'existence du risque doit être réelle (ex : défaut de paiement, procédure en cours, etc.).
+- Le risque doit être apprécié créance par créance (analyse de la balance client).
+- Cependant, il peut être admis de procéder à une évaluation statistique du risque et donc du calcul de la provision.
