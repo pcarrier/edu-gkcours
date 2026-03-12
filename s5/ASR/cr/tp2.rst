@@ -88,7 +88,7 @@ manière suivante : ::
        finsi.
 
        si événement est réception requête (ARP Request)
-          si adresse MAC cible == adresse MAC locale :
+          si adresse IP cible == adresse IP locale :
              envois reponse ARP avec MAC locale.
              MAJ table ARP avec les infos de la source.
           finsi.
@@ -206,15 +206,15 @@ Informations échangées :
 Informations échangées : 
 
   + numéro de séquence initial du serveur dans le champ Sequence Number.
-  + numéro de séquence précedent du client + 1 dans le champs Acknowledgement Member.
+  + numéro de séquence précedent du client + 1 dans le champs Acknowledgement Number.
 
 
 + CLIENT  -> SERVEUR : ACK, seq=1.
 
 Informations échangées : 
 
-  + Acknowledgement Member précédent dans le champ Sequence Number,
-  + Sequence Number +1 dans le champ Acknowledgement Member 
+  + Acknowledgement Number précédent dans le champ Sequence Number,
+  + Sequence Number +1 dans le champ Acknowledgement Number 
 
 
 Rôle du flag SYN :
@@ -333,7 +333,7 @@ La négociation se fait en UDP. Celle-ci est prise en charge côté serveur via 
 
 - Le serveur du demandeur indique s'il peut ou non transmettre la requête ; le cas échéant, il notifie alors le demandé sur tous les ``tty`` (selon l'implémentation du protocole) ou celui spécifié.
 
-- En l'absence d'absence de réponse du demandé, après un timeout de généralement 30 secondes, le serveur du demandé notifie le client du demandeur du refus.
+- En l'absence de réponse du demandé, après un timeout de généralement 30 secondes, le serveur du demandé notifie le client du demandeur du refus.
 
 - En cas d'acceptation, le demandé invoque le client et un échange similaire aux trois points précédents a lieu, puis la partie discussion commence.
 
@@ -346,7 +346,7 @@ La discussion se fait en TCP. Celle-ci est entièrement pris en charge par les p
 
 - Le programe du demandé se connecte en TCP sur un port temporaire, sur lequel écoute le programme du demandeur.
 
-- Le demandé transmet 3 caractères de contrôle (suppression en arrière et avant et un troisière).
+- Le demandé transmet 3 caractères de contrôle (suppression en arrière et avant et un troisième).
 
 - Puis chacun transmet chaque caractère à sa saisie.
 

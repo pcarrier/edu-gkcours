@@ -1,5 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <unistd.h>
+#include <sys/wait.h>
 
 void pi(char *msg) {
 	printf("%s: PID: %i, PPID: %i\n",msg,getpid(),getppid());
@@ -8,15 +10,20 @@ void pi(char *msg) {
 void makesons(int nb) {
 	int remaining = nb;
 	while (remaining) {
-		if (fork()) {
+		pid_t pid = fork();
+		if (pid > 0) {
 			pi("Hello!");
-			wait();
+			wait(NULL);
 			--remaining;
 		}
-		else {
+		else if (pid == 0) {
 			pi("HaAaa");
 			if(remaining==3) remaining = 2;
 			else remaining = 0;
+		}
+		else {
+			perror("fork");
+			break;
 		}
 	}
 }
@@ -24,6 +31,6 @@ void makesons(int nb) {
 int main(int argc,char **argv,char **envp) {
 	pi("Let's have fun");
 	makesons(3);
-	wait();
+	wait(NULL);
 	return EXIT_SUCCESS;
 }

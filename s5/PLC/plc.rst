@@ -182,6 +182,5 @@ Exemple
         recherche(X,[X|L]).
         recherche(X,[T|L]) :- recherche(X,L).
 
-        concatene([],[],X).
-        concatene(X,[A|Y],[A|L]) :- concatene(X,Y,L).
-        concatene([A|X],[],[A|L]) :- concatene(X,[],L).
+        concatene([],X,X).
+        concatene([A|X],Y,[A|L]) :- concatene(X,Y,L).
