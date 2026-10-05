@@ -218,6 +218,6 @@ L'ensemble des cousins éloignés. Échoue comme attendu. La résolution de ``my
 L'arbre d'exécution tel que dans le cours est : ::
 
         m(X,Y)
-        m(Z,W),parent(Z,X),parent(Z,Y)
+        m(Z,W),parent(Z,X),parent(W,Y)
         m(Z2,W2),parent(T,Z2),parent(T,W2),parent(Z,X),parent(Z,Y)
         m(Z3,W3),parent(T2,Z3),etc.

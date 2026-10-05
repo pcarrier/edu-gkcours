@@ -28,10 +28,10 @@ DTD
 
 ::
 
-        <!ELEMENT ville #PCDATA>
-        <!ELEMENT date #PCDATA>
-        <!ELEMENT temperatureMin #PCDATA>
-        <!ELEMENT temperatureMax #PCDATA>
+        <!ELEMENT ville (#PCDATA)>
+        <!ELEMENT date (#PCDATA)>
+        <!ELEMENT temperatureMin (#PCDATA)>
+        <!ELEMENT temperatureMax (#PCDATA)>
         <!ELEMENT meteo (ville,date,temperatureMin,temperatureMax)>
         <!--
         noeud+ 1+ fois
@@ -71,9 +71,9 @@ Utilisation des cardinalités
         <!ELEMENT polyedre (face*)>
         <!ELEMENT face (sommet*)>
         <!ELEMENT sommet (x,y,z)>
-        <!ELEMENT x #PCDATA>
-        <!ELEMENT y #PCDATA>
-        <!ELEMENT z #PCDATA>
+        <!ELEMENT x (#PCDATA)>
+        <!ELEMENT y (#PCDATA)>
+        <!ELEMENT z (#PCDATA)>
 
 Utilisation des références
 ==========================

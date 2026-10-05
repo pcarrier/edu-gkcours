@@ -83,5 +83,5 @@ Représentation de l'information
 
 - Non-numérique, comme caractère ASCII (voir `ASCII(7)`_)
   
-.. _ASCII(7): http://www.freebsd.org/cgi/man.cgi?query=ascii&manpath=FreeBSD+7.0-RELEASE)
+.. _ASCII(7): http://www.freebsd.org/cgi/man.cgi?query=ascii&manpath=FreeBSD+7.0-RELEASE
 .. _le cours de Nantes: http://www.sciences.univ-nantes.fr/info/perso/permanents/bouhineau/Enseignement/Architecture/CoursRepresentationInformations.htm
